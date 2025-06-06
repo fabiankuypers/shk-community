@@ -10,8 +10,8 @@ type BenefitItemProps = {
 
 const BenefitItem: React.FC<BenefitItemProps> = ({ icon: Icon, title, description }) => {
   return (
-    <div className="flex flex-col items-center md:items-start text-center md:text-left">
-      <div className="bg-blue-100 text-blue-700 p-3 rounded-full mb-4">
+    <div className="flex flex-col items-center md:items-start text-center md:text-left group cursor-pointer transition-transform duration-200 hover:scale-[1.02]">
+      <div className="bg-blue-100 text-blue-700 p-3 rounded-full mb-4 transition-colors group-hover:bg-blue-200">
         <Icon className="w-7 h-7" />
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -56,7 +56,7 @@ const BenefitSection: React.FC<BenefitSectionProps> = ({
                 isRightAligned ? 'order-1 md:order-2' : 'order-1 md:order-1'
               }`}
             >
-              <div className="rounded-lg overflow-hidden shadow-xl">
+              <div className="rounded-lg overflow-hidden shadow-xl transition-transform duration-200 hover:scale-[1.02]">
                 <img
                   src={image}
                   alt={title}
