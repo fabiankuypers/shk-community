@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../components/ui/Container';
 import Header from '../components/layout/Header';
@@ -8,6 +8,11 @@ import Button from '../components/ui/Button';
 import { ArrowLeft } from 'lucide-react';
 
 const ImpressumPage: React.FC = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="font-sans bg-white min-h-screen">
       <Header />

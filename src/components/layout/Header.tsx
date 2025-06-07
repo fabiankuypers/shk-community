@@ -24,11 +24,20 @@ const Header: React.FC = () => {
     setIsPaymentModalOpen(true);
   };
 
+  // Scroll to top when navigating to subpages
+  useEffect(() => {
+    if (!isHomePage) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, isHomePage]);
+
   return (
     <>
       <header
-        className={`fixed w-full z-40 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-md'
+        className={`fixed w-full z-40 transition-all duration-500 ease-in-out ${
+          isHomePage && !isScrolled 
+            ? 'bg-transparent backdrop-blur-none shadow-none' 
+            : 'bg-white/95 backdrop-blur-md shadow-md'
         }`}
       >
         <Container>
@@ -38,7 +47,11 @@ const Header: React.FC = () => {
               {!isHomePage ? (
                 <Link
                   to="/"
-                  className="flex items-center text-blue-700 hover:text-blue-900 transition-colors group mr-4"
+                  className={`flex items-center transition-colors group mr-4 ${
+                    isHomePage && !isScrolled 
+                      ? 'text-white hover:text-blue-100' 
+                      : 'text-blue-700 hover:text-blue-900'
+                  }`}
                 >
                   <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
                   <span className="font-medium hidden md:inline">Zurück zur Startseite</span>
@@ -47,11 +60,17 @@ const Header: React.FC = () => {
               ) : null}
               
               <Link to="/" className="flex items-center">
-                <Users className="h-8 w-8 text-blue-700" />
-                <span className="ml-2 text-xl font-bold text-blue-900 hidden sm:inline">
+                <Users className={`h-8 w-8 transition-colors ${
+                  isHomePage && !isScrolled ? 'text-white' : 'text-blue-700'
+                }`} />
+                <span className={`ml-2 text-xl font-bold transition-colors hidden sm:inline ${
+                  isHomePage && !isScrolled ? 'text-white' : 'text-blue-900'
+                }`}>
                   SHK + Haustechnik Community
                 </span>
-                <span className="ml-2 text-lg font-bold text-blue-900 sm:hidden">
+                <span className={`ml-2 text-lg font-bold transition-colors sm:hidden ${
+                  isHomePage && !isScrolled ? 'text-white' : 'text-blue-900'
+                }`}>
                   SHK Community
                 </span>
               </Link>
@@ -61,13 +80,28 @@ const Header: React.FC = () => {
             <nav className="flex items-center space-x-4">
               {isHomePage && (
                 <div className="hidden md:flex items-center space-x-6 mr-4">
-                  <a href="#vorteile\" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
+                  <a 
+                    href="#vorteile" 
+                    className={`font-medium transition-colors ${
+                      !isScrolled ? 'text-white hover:text-blue-100' : 'text-gray-700 hover:text-blue-700'
+                    }`}
+                  >
                     Vorteile
                   </a>
-                  <a href="#testimonials" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
+                  <a 
+                    href="#testimonials" 
+                    className={`font-medium transition-colors ${
+                      !isScrolled ? 'text-white hover:text-blue-100' : 'text-gray-700 hover:text-blue-700'
+                    }`}
+                  >
                     Erfahrungen
                   </a>
-                  <a href="#faq" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
+                  <a 
+                    href="#faq" 
+                    className={`font-medium transition-colors ${
+                      !isScrolled ? 'text-white hover:text-blue-100' : 'text-gray-700 hover:text-blue-700'
+                    }`}
+                  >
                     FAQ
                   </a>
                 </div>
