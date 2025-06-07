@@ -33,7 +33,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
         {/* Content */}
         <div className="p-4">
           <iframe
-            src="https://app.ai-marketing24.com/v2/location/HGn4KxQ130v9V9UvnRY6/integration/67177e4a9ab07f768e8e9bd6"
+            src="https://buy.stripe.com/eVq14ofeI0NAesv46XcV203"
             className="w-full h-[70vh] border-0 rounded"
             title="Mitgliedschaft Payment"
           />
