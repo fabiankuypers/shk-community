@@ -50,3 +50,5 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
 };
 
 export default PaymentModal;
+
+export { PaymentModal }

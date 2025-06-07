@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../ui/Container';
-import { LucideIcon } from 'lucide-react';
+import { DivideIcon as LucideIcon } from 'lucide-react';
 
 interface BenefitItemProps {
   icon: LucideIcon;
