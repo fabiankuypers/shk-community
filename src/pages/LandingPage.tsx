@@ -6,6 +6,7 @@ import TestimonialSection from '../components/TestimonialSection';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
+import CookieBanner from '../components/CookieBanner';
 
 import { 
   Users, 
@@ -132,6 +133,7 @@ const LandingPage: React.FC = () => {
       <FAQSection />
       <CTASection />
       <Footer />
+      <CookieBanner />
     </div>
   );
 };

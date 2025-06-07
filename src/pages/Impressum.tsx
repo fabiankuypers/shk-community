@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../components/Container';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import CookieBanner from '../components/CookieBanner';
 
 const Impressum: React.FC = () => {
   return (
@@ -79,6 +80,7 @@ const Impressum: React.FC = () => {
       </section>
       
       <Footer />
+      <CookieBanner />
     </div>
   );
 };
