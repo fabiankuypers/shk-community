@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
         items={digitalBenefits}
         align="right"
         bgColor="bg-gray-50"
-        image="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        image="/src/assets/hands-shaking.webp"
       />
       
       <BenefitSection
@@ -122,7 +122,7 @@ const HomePage: React.FC = () => {
         items={successionBenefits}
         align="left"
         bgColor="bg-white"
-        image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        image="/src/assets/generationswechsel.webp"
       />
       
       {/* CTA Button after succession section */}
