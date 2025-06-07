@@ -1,20 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import Impressum from './pages/Impressum';
-import Datenschutz from './pages/Datenschutz';
+import HomePage from './pages/HomePage';
+import ImpressumPage from './pages/ImpressumPage';
+import DatenschutzPage from './pages/DatenschutzPage';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/impressum.html" element={<Impressum />} />
-        <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/datenschutz.html" element={<Datenschutz />} />
-        {/* Fallback route */}
-        <Route path="*" element={<LandingPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/impressum" element={<ImpressumPage />} />
+        <Route path="/datenschutz" element={<DatenschutzPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </Router>
   );
