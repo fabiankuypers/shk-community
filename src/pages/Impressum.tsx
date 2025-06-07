@@ -3,17 +3,62 @@ import Container from '../components/Container';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
+import Button from '../components/Button';
+import { ArrowLeft } from 'lucide-react';
 
 const Impressum: React.FC = () => {
+  const handleBackToHome = () => {
+    window.location.href = '/';
+  };
+
   return (
     <div className="font-sans bg-white min-h-screen">
-      <Header />
+      <Header showBackButton={true} />
       
-      <section className="pt-32 pb-16">
+      {/* Hero Section with Back Navigation */}
+      <section className="pt-24 pb-8 bg-gradient-to-r from-blue-50 to-blue-100">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8 text-blue-900">Impressum</h1>
+            {/* Mobile Back Button */}
+            <div className="md:hidden mb-6">
+              <button
+                onClick={handleBackToHome}
+                className="flex items-center text-blue-700 hover:text-blue-900 transition-colors group"
+              >
+                <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+                <span className="font-medium">Zurück zur Startseite</span>
+              </button>
+            </div>
             
+            <div className="text-center">
+              <h1 className="text-4xl font-bold mb-4 text-blue-900">Impressum</h1>
+              <p className="text-xl text-gray-700 mb-6">
+                Rechtliche Informationen zur SHK + Haustechnik Community
+              </p>
+              
+              {/* Quick CTA */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  variant="primary" 
+                  onClick={() => window.location.href = '/'}
+                  className="flex items-center"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Zurück zur Community
+                </Button>
+                <span className="text-gray-500">oder</span>
+                <Button variant="outline">
+                  Jetzt Mitglied werden
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      <section className="py-16">
+        <Container>
+          <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-semibold mb-4 text-blue-800">Angaben gemäß § 5 TMG</h2>
               
@@ -73,6 +118,28 @@ const Impressum: React.FC = () => {
               <div className="mb-8">
                 <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
                 <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+              </div>
+            </div>
+            
+            {/* Bottom CTA Section */}
+            <div className="mt-16 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg text-center">
+              <h3 className="text-2xl font-bold mb-4 text-blue-900">
+                Bereit für den Austausch mit anderen SHK-Profis?
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Werden Sie Teil unserer Community und profitieren Sie vom Erfahrungsaustausch.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="primary" size="lg">
+                  Jetzt Mitglied werden
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={handleBackToHome}
+                >
+                  Zurück zur Startseite
+                </Button>
               </div>
             </div>
           </div>

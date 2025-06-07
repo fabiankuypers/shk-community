@@ -3,17 +3,67 @@ import Container from '../components/Container';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
+import Button from '../components/Button';
+import { ArrowLeft, Shield } from 'lucide-react';
 
 const Datenschutz: React.FC = () => {
+  const handleBackToHome = () => {
+    window.location.href = '/';
+  };
+
   return (
     <div className="font-sans bg-white min-h-screen">
-      <Header />
+      <Header showBackButton={true} />
       
-      <section className="pt-32 pb-16">
+      {/* Hero Section with Back Navigation */}
+      <section className="pt-24 pb-8 bg-gradient-to-r from-blue-50 to-blue-100">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8 text-blue-900">Datenschutzerklärung</h1>
+            {/* Mobile Back Button */}
+            <div className="md:hidden mb-6">
+              <button
+                onClick={handleBackToHome}
+                className="flex items-center text-blue-700 hover:text-blue-900 transition-colors group"
+              >
+                <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+                <span className="font-medium">Zurück zur Startseite</span>
+              </button>
+            </div>
             
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <div className="bg-blue-100 p-3 rounded-full">
+                  <Shield className="h-8 w-8 text-blue-700" />
+                </div>
+              </div>
+              <h1 className="text-4xl font-bold mb-4 text-blue-900">Datenschutzerklärung</h1>
+              <p className="text-xl text-gray-700 mb-6">
+                Transparenz über den Umgang mit Ihren Daten in der SHK + Haustechnik Community
+              </p>
+              
+              {/* Quick CTA */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  variant="primary" 
+                  onClick={handleBackToHome}
+                  className="flex items-center"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Zurück zur Community
+                </Button>
+                <span className="text-gray-500">oder</span>
+                <Button variant="outline">
+                  Jetzt Mitglied werden
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      <section className="py-16">
+        <Container>
+          <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-semibold mb-4 text-blue-800">1. Datenschutz auf einen Blick</h2>
               
@@ -147,6 +197,28 @@ const Datenschutz: React.FC = () => {
               </div>
 
               <p className="text-sm text-gray-600 mt-8">Stand: {new Date().toLocaleDateString('de-DE')}</p>
+            </div>
+            
+            {/* Bottom CTA Section */}
+            <div className="mt-16 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg text-center">
+              <h3 className="text-2xl font-bold mb-4 text-blue-900">
+                Ihre Daten sind bei uns sicher
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Werden Sie Teil unserer Community und profitieren Sie vom sicheren Austausch mit anderen SHK-Profis.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="primary" size="lg">
+                  Jetzt Mitglied werden
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={handleBackToHome}
+                >
+                  Zurück zur Startseite
+                </Button>
+              </div>
             </div>
           </div>
         </Container>
