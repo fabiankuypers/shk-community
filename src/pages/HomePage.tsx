@@ -6,6 +6,7 @@ import BenefitSection from '../components/sections/BenefitSection';
 import TestimonialSection from '../components/sections/TestimonialSection';
 import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
+import CTASectionMini from '../components/sections/CTASectionMini';
 import CookieBanner from '../components/modals/CookieBanner';
 
 import { 
@@ -123,6 +124,11 @@ const HomePage: React.FC = () => {
         bgColor="bg-white"
         image="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
+      
+      {/* CTA Button after succession section */}
+      <section className="bg-white pb-8">
+        <CTASectionMini />
+      </section>
       
       <TestimonialSection />
       <FAQSection />

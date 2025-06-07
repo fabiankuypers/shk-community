@@ -21,17 +21,15 @@ const ImpressumPage: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/">
-                <Button 
-                  variant="primary" 
-                  className="flex items-center"
-                >
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Zurück zur Community
-                </Button>
+              <Link 
+                to="/"
+                className="inline-flex items-center px-4 py-2 text-blue-700 hover:text-blue-900 transition-colors font-medium border border-blue-300 rounded-lg hover:bg-blue-50"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Zurück zur Community
               </Link>
               <span className="text-gray-500">oder</span>
-              <Button variant="outline">
+              <Button variant="primary">
                 Jetzt Mitglied werden
               </Button>
             </div>
