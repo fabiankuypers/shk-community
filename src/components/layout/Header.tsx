@@ -28,11 +28,7 @@ const Header: React.FC = () => {
     <>
       <header
         className={`fixed w-full z-40 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white shadow-md text-gray-700' 
-            : isHomePage 
-              ? 'bg-blue-600/90 backdrop-blur-sm text-white' 
-              : 'bg-white shadow-md text-gray-700'
+          isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-md'
         }`}
       >
         <Container>
@@ -42,9 +38,7 @@ const Header: React.FC = () => {
               {!isHomePage ? (
                 <Link
                   to="/"
-                  className={`flex items-center transition-colors group mr-4 ${
-                    isScrolled ? 'text-blue-700 hover:text-blue-900' : 'text-blue-700 hover:text-blue-900'
-                  }`}
+                  className="flex items-center text-blue-700 hover:text-blue-900 transition-colors group mr-4"
                 >
                   <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
                   <span className="font-medium hidden md:inline">Zurück zur Startseite</span>
@@ -53,29 +47,11 @@ const Header: React.FC = () => {
               ) : null}
               
               <Link to="/" className="flex items-center">
-                <Users className={`h-8 w-8 ${
-                  isScrolled 
-                    ? 'text-blue-700' 
-                    : isHomePage 
-                      ? 'text-white' 
-                      : 'text-blue-700'
-                }`} />
-                <span className={`ml-2 text-xl font-bold hidden sm:inline ${
-                  isScrolled 
-                    ? 'text-blue-900' 
-                    : isHomePage 
-                      ? 'text-white' 
-                      : 'text-blue-900'
-                }`}>
+                <Users className="h-8 w-8 text-blue-700" />
+                <span className="ml-2 text-xl font-bold text-blue-900 hidden sm:inline">
                   SHK + Haustechnik Community
                 </span>
-                <span className={`ml-2 text-lg font-bold sm:hidden ${
-                  isScrolled 
-                    ? 'text-blue-900' 
-                    : isHomePage 
-                      ? 'text-white' 
-                      : 'text-blue-900'
-                }`}>
+                <span className="ml-2 text-lg font-bold text-blue-900 sm:hidden">
                   SHK Community
                 </span>
               </Link>
@@ -85,34 +61,13 @@ const Header: React.FC = () => {
             <nav className="flex items-center space-x-4">
               {isHomePage && (
                 <div className="hidden md:flex items-center space-x-6 mr-4">
-                  <a 
-                    href="#vorteile" 
-                    className={`font-medium transition-colors ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:text-blue-700' 
-                        : 'text-white/90 hover:text-white'
-                    }`}
-                  >
+                  <a href="#vorteile\" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
                     Vorteile
                   </a>
-                  <a 
-                    href="#testimonials" 
-                    className={`font-medium transition-colors ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:text-blue-700' 
-                        : 'text-white/90 hover:text-white'
-                    }`}
-                  >
+                  <a href="#testimonials" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
                     Erfahrungen
                   </a>
-                  <a 
-                    href="#faq" 
-                    className={`font-medium transition-colors ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:text-blue-700' 
-                        : 'text-white/90 hover:text-white'
-                    }`}
-                  >
+                  <a href="#faq" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
                     FAQ
                   </a>
                 </div>
