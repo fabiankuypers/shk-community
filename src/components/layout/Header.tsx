@@ -61,7 +61,7 @@ const Header: React.FC = () => {
             <nav className="flex items-center space-x-4">
               {isHomePage && (
                 <div className="hidden md:flex items-center space-x-6 mr-4">
-                  <a href="#vorteile" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
+                  <a href="#vorteile\" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
                     Vorteile
                   </a>
                   <a href="#testimonials" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
